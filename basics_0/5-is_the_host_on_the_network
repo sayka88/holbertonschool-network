@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
-#Use ping for verificay red
-if [ "$#" -eq "1" ];
+# This pings an address suppplied in arg1 5 times
+if [ $# -eq 0 ]; 
 then
-  ping -c 5 "$1"
+	echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
+	exit 1
 fi
-if [ "$#" -eq "0" ]
-then
-  echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
-fi
+
+ping -c 5 "$1"
