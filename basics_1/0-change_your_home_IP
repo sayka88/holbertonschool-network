@@ -2,10 +2,10 @@
 # Script to change the IP of localhost to 127.0.0.2 and facebook.com to 8.8.8.8
 
 # Change all references of localhost from 127.0.0.1 to 127.0.0.2
-sudo sed -i 's/127.0.0.1\(.*\)localhost/127.0.0.2\1localhost/' /etc/hosts
+sed -i 's/127.0.0.1\(.*\)localhost/127.0.0.2\1localhost/' /etc/hosts
 
 # Remove the old entry for facebook.com if it exists
-sudo sed -i '/facebook\.com/d' /etc/hosts
+sed -i '/facebook\.com/d' /etc/hosts
 
 # Add the new entry for facebook.com
 echo "8.8.8.8 facebook.com" | sudo tee -a /etc/hosts
