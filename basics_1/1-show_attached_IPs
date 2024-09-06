@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# display all ipv4 and no the ipv6 if the ifconfig file 
+ifconfig | grep 'inet ' | cut -d " " -f10
